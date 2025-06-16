@@ -158,16 +158,24 @@ border-radius: 50%;
 
 .grid{
     width: 100%;
-    height: 100vh;
+   min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    padding-left: 50px;
 
 }
 .grid .box{
-    width: 300px;
-    height:200px;
+    width: 320px;
+    height:220px;
+      position: relative;
+      margin-bottom: 20px;
 }
 .grid .box img {
 width: 100%;
 height: 90%;
+object-fit: cover;
+object-position: center;
+border-radius: 20px;
 }
 
 .grid .box .bottom{
@@ -188,6 +196,19 @@ height: 90%;
     height: 20px;
     object-fit: cover;
     object-position: center;
+    border-radius: 50%;
+}
+.grid .box .bottom .left button {
+    background-color: rgb(204, 205, 205);
+    border: none;
+    color: rgb(150, 150, 150);
+    margin-left: 10px;
+
+}
+.grid .box .bottom .left button:hover {
+    background-color: black;
+    color: white;
+cursor: pointer;
 }
 
 .grid .box .bottom .right{
@@ -196,3 +217,48 @@ height: 90%;
     display: flex;
     justify-content: end;
 }
+
+.grid .overlay{
+    width: 100%;
+    background: linear-gradient( to top, rgba(74, 74, 74, 0.49),rgba(255, 255, 255, 0.638));
+    height: 20%;
+    border-radius: 20px;
+    position: absolute;
+    transition: all 1s ease-in;
+    opacity: 0;
+    top: 69%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.grid .box:hover .overlay{
+    top: 69%;
+    transition: all 1s ease;
+    display: block;
+    opacity: 1;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+}
+
+.grid .overlay h1{
+color: white;
+}
+
+.grid .overlay .icon i {
+background-color: white;
+color: black;
+padding: 10px;
+font-size: 20px;
+border-radius: 50%;
+}
+
+
